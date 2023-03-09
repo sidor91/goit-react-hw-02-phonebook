@@ -44,7 +44,7 @@ class Form extends React.Component {
         <Label>
           Number
           <InputField
-            type='number'
+            type='tel'
             name="number"
             onChange={this.onInputChange}
             value={number}
