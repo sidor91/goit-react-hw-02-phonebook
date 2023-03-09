@@ -36,5 +36,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "i": "^0.3.7",
+    "nanoid": "^4.0.1",
+    "npm": "^9.6.1",
+    "prop-types": "^15.8.1",
+    "styled-components": "^5.3.8"
   }
 }
