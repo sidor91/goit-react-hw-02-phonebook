@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ListOfContacts } from './ContactList.styled';
 import Contact from '../Contact';
 
@@ -15,5 +16,10 @@ const ContactList = ({ data, onContactDelete }) => (
     ))}
   </ListOfContacts>
 );
+
+Contact.ContactList = {
+  data: PropTypes.arrayOf(PropTypes.object),
+  onContactDelete: PropTypes.func.isRequired,
+};
 
 export default ContactList;
