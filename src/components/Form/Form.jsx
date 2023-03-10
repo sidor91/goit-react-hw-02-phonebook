@@ -4,7 +4,6 @@ import { FormElement, Label, InputField, Submit } from './Form.styled';
 
 class Form extends React.Component {
   state = {
-    id: nanoid(),
     name: '',
     number: '',
   };
@@ -16,9 +15,8 @@ class Form extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.setState({ id: nanoid() });
+    this.props.onSubmit({...this.state, id: nanoid()});
     this.reset();
-    this.props.onSubmit(this.state);
   };
 
   reset = () => {
