@@ -10,7 +10,7 @@ const Contact = ({ name, number, id, handleDelete }) => (
   <ContactItem>
     <ContactName>{name}:</ContactName>
     <ContactNumber>{number}</ContactNumber>
-    <ContactDeleteButton type="button" onClick={handleDelete} id={id}>
+    <ContactDeleteButton type="button" onClick={() => handleDelete(id)} id={id}>
       Delete
     </ContactDeleteButton>
   </ContactItem>

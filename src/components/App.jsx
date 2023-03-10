@@ -23,11 +23,11 @@ class App extends React.Component {
     });
   };
 
-  contactDeleteHandler = data => {
+  contactDeleteHandler = id => {
     this.setState(prevState => {
       return {
         contacts: prevState.contacts.filter(
-          contact => contact.id !== data.target.id
+          contact => contact.id !== id
         ),
       };
     });
