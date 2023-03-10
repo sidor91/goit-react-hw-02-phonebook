@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from './Section'
+import Section from './Section';
 import Form from './Form';
 import ContactList from './ContactList';
 import Filter from './Filter';
@@ -12,7 +12,14 @@ class App extends React.Component {
 
   formSubmitHandler = data => {
     this.setState(prevState => {
-      return { contacts: [...prevState.contacts, data] };
+      const isNameTaken = prevState.contacts.find(
+        contact => contact.name === data.name
+      );
+      if (isNameTaken) {
+        alert(`${isNameTaken.name} is already in contacts`);
+      } else {
+        return { contacts: [...prevState.contacts, data] };
+      }
     });
   };
 
@@ -36,7 +43,7 @@ class App extends React.Component {
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filterToLowerCase)
     );
-  }
+  };
 
   render() {
     const { contacts, filter } = this.state;
@@ -69,6 +76,6 @@ class App extends React.Component {
       </div>
     );
   }
-};
+}
 
 export { App };
