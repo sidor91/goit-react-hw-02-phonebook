@@ -1,16 +1,27 @@
 import styled from 'styled-components';
 
 export const FormElement = styled.form`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
 `;
 export const Label = styled.label`
 display: flex;
-/* justify-content: space-between; */
 font-size: 16px;
-width: 400px;
+max-width: 400px;
+
 `;
+
+export const LabelName = styled.span`
+  width: 100px;
+  margin-right: 10px;
+`;
+
 export const InputField = styled.input`
-  margin-left: 10px;
+  width: 100%;
 `;
-export const Submit = styled.button``;
+export const Submit = styled.button`
+  margin-top: 10px;
+  display: inline-block;
+  width: 100px;
+`;

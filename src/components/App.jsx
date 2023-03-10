@@ -58,6 +58,10 @@ class App extends React.Component {
           alignItems: 'center',
           fontSize: 40,
           color: '#010101',
+          paddingLeft: 200,
+          paddingRight: 200,
+          paddingTop: 20,
+          paddingBottom: 20,
         }}
       >
         <h1>Phonebook</h1>
@@ -72,7 +76,7 @@ class App extends React.Component {
               onContactDelete={this.contactDeleteHandler}
             />
           </Section>
-        )}
+         )}
       </div>
     );
   }

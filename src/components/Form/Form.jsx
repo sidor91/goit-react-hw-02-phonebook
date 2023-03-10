@@ -1,6 +1,12 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { FormElement, Label, InputField, Submit } from './Form.styled';
+import {
+  FormElement,
+  Label,
+  InputField,
+  Submit,
+  LabelName,
+} from './Form.styled';
 
 class Form extends React.Component {
   state = {
@@ -28,7 +34,7 @@ class Form extends React.Component {
     return (
       <FormElement onSubmit={this.onSubmit}>
         <Label>
-          Name
+          <LabelName>Name</LabelName>
           <InputField
             onChange={this.onInputChange}
             value={name}
@@ -40,7 +46,7 @@ class Form extends React.Component {
           />
         </Label>
         <Label>
-          Number
+          <LabelName>Number</LabelName>
           <InputField
             type="tel"
             name="number"
