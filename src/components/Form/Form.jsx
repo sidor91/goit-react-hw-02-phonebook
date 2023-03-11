@@ -12,6 +12,12 @@ import {
 class Form extends React.Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    contacts: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+      })
+    ),
   };
 
   state = {
