@@ -26,6 +26,14 @@ class Form extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
+
+    const isNameTaken = this.props.contacts.find(
+      contact => contact.name === this.state.name
+    );
+    if (isNameTaken) {
+      return alert(`${isNameTaken.name} is already in contacts`);
+    }
+
     this.props.onSubmit({ ...this.state, id: nanoid() });
     this.reset();
   };

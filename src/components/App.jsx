@@ -11,24 +11,13 @@ class App extends React.Component {
   };
 
   formSubmitHandler = data => {
-    this.setState(prevState => {
-      const isNameTaken = prevState.contacts.find(
-        contact => contact.name === data.name
-      );
-      if (isNameTaken) {
-        alert(`${isNameTaken.name} is already in contacts`);
-      } else {
-        return { contacts: [...prevState.contacts, data] };
-      }
-    });
+    this.setState(prevState => ({ contacts: [...prevState.contacts, data] }));
   };
 
   contactDeleteHandler = id => {
     this.setState(prevState => {
       return {
-        contacts: prevState.contacts.filter(
-          contact => contact.id !== id
-        ),
+        contacts: prevState.contacts.filter(contact => contact.id !== id),
       };
     });
   };
@@ -66,7 +55,7 @@ class App extends React.Component {
       >
         <h1>Phonebook</h1>
         <Section title="Add a contact">
-          <Form onSubmit={this.formSubmitHandler} />
+          <Form onSubmit={this.formSubmitHandler} contacts={contacts} />
         </Section>
         {contacts.length > 0 && (
           <Section title="Contacts">
@@ -76,7 +65,7 @@ class App extends React.Component {
               onContactDelete={this.contactDeleteHandler}
             />
           </Section>
-         )}
+        )}
       </div>
     );
   }
