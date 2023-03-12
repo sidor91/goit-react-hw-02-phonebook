@@ -55,7 +55,7 @@ class App extends React.Component {
       >
         <h1>Phonebook</h1>
         <Section title="Add a contact">
-          <Form onSubmit={this.formSubmitHandler} contacts={contacts} />
+          <Form onFormSubmit={this.formSubmitHandler} contacts={contacts} />
         </Section>
         {contacts.length > 0 && (
           <Section title="Contacts">
